@@ -9,13 +9,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Admin Dashboard",
   description: "Admin Dashboard",
-};
+}
 
-export default function RootLayout({
+export default function RootLayout ({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <ClerkProvider>
     
