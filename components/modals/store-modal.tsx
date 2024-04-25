@@ -1,15 +1,15 @@
 "use client";
 import * as z from "zod";
+import axios from "axios"; 
 
 import { useStoreModal } from "@/hooks/use-store-modal";
-import { Modal } from "@/components/modals/ui/modal";
+import { Modal } from "@/components/ui/modal";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/modals/ui/form";
-import { Input } from "@/components/modals/ui/input";
-import { Button } from "@/components/modals/ui/button";
+import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import axios from "axios";
 
 const formSchema = z.object({
     name: z.string().min(1),
@@ -31,9 +31,10 @@ export const StoreModal = () => {
         try {
             setLoading(true);
 
-            const response = await axios.post('/api/store',values);
+            const response = await axios.post("/api/stores", values);
 
             console.log(response.data);
+
         } catch (error) {
             console.log(error);
         } finally {

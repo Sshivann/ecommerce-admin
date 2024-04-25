@@ -26,7 +26,7 @@ export async function Post(
             }
         });
 
-        return NextResponse.json(store);
+        return NextResponse.json(store);   
 
     } catch (error) {
         console.log('[STORES_POST]',error);
